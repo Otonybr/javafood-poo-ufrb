@@ -17,15 +17,13 @@ public class DBRefeicao extends DBServico {
     Refeicao refeicao8 = new Refeicao("18", "porção de cenoura frita", "vinho", "ketchup", 10.00);
     Refeicao refeicao9 = new Refeicao("19", "porção de beterraba cozida", "sprite", "ketchup", 10.00);
 
+   
+
     // ArrayList armazena todos as Refeicao cadastrados
     private ArrayList<Refeicao> refeicaoList = new ArrayList<Refeicao>();
 
     // Construtor sem argumentos, apenas para criação de objetos
     public DBRefeicao() {
-    }
-
-    // Construtor de 1 argumento
-    public DBRefeicao(Refeicao refeicao) {
         adicionarRefeicao(refeicao);
         adicionarRefeicao(refeicao1);
         adicionarRefeicao(refeicao2);
@@ -36,6 +34,12 @@ public class DBRefeicao extends DBServico {
         adicionarRefeicao(refeicao7);
         adicionarRefeicao(refeicao8);
         adicionarRefeicao(refeicao9);
+    
+    }
+
+    // Construtor de 1 argumento
+    public DBRefeicao(Refeicao refeicao) {
+     
     }
 
     // Recebe um objeto do tipo Refeicao e adiciona à lista de refeicaos
