@@ -19,19 +19,22 @@ public class MenuFrete {
      */
     public Frete cadastrarFrete() {
         String empresa;
-        int prazo;
+        int prazo, codigo;
         double valorMinimo;
 
         System.out.println("-------------------Cadastrar Frete-------------------------");
         System.out.println("\n\nNome da Empresa: ");
         empresa = input.nextLine();
-        System.out.println("\nPrazo: ");
+        System.out.println("\nPrazo (Minutos): ");
         prazo = input.nextInt();
         System.out.println("\nvalor: ");
         valorMinimo = input.nextDouble();
+        System.out.println("\nCódigo do Frete: ");
+        codigo = input.nextInt();
 
-        Frete data = new Frete(empresa, prazo, valorMinimo);
+        Frete data = new Frete(codigo, empresa, prazo, valorMinimo);
 
         return data;
+
     }
 }

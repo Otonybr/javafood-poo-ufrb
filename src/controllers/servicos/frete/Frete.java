@@ -1,13 +1,15 @@
 package controllers.servicos.frete;
 
 public class Frete {
+    private int codigo;
+
     private String empresa;
     private int prazo;
     private double valorMinimo;
 
     // cosntrutor
-    public Frete(String empresa, int prazo, double valorMinimo) {
-
+    public Frete(int codigo, String empresa, int prazo, double valorMinimo) {
+        this.codigo = codigo;
         if (prazo <= 0.0)
             throw new IllegalArgumentException("Prazo must be > 0.0");
 
@@ -18,6 +20,10 @@ public class Frete {
 
         this.valorMinimo = valorMinimo;
         this.empresa = empresa;
+    }
+    //construtor vazio
+    public Frete(){
+
     }
 
     // gets e sets
@@ -45,11 +51,19 @@ public class Frete {
         this.valorMinimo = valorMinimo;
     }
 
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
     // formatação
     @Override
     public String toString() {
-        return String.format("%s:%s / %s: %s dias / %s: R$%,.2f", "empresa", getEmpresa(), "prazo", getPrazo(),
-                "valor minimo", getValorMinimo());
+        return String.format("%s:%s / %s:%s / %s: %s minutos / %s: R$%,.2f", "Código", getCodigo(), "empresa",
+                getEmpresa(), "prazo", getPrazo(), "valor minimo", getValorMinimo());
     }
 
 }

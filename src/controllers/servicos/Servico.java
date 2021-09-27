@@ -2,11 +2,12 @@ package controllers.servicos;
 
 public class Servico {
 
-    private String codigo, nome;
+    private String codigo, nome, responsavel;
+
     private double valor;
 
     // construtor
-    public Servico(String codigo, String nome, double valor) {
+    public Servico(String codigo, String nome, double valor, String responsavel) {
 
         this.codigo = codigo;
         this.nome = nome;
@@ -14,6 +15,14 @@ public class Servico {
     }
 
     // getters e setters
+    public String getResponsavel() {
+        return this.responsavel;
+    }
+
+    public void setResponsavel(String responsavel) {
+        this.responsavel = responsavel;
+    }
+
     public double getValor() {
         return valor;
     }
@@ -41,7 +50,7 @@ public class Servico {
     // formatação
     @Override
     public String toString() {
-        return String.format("%s: %s / %s: %s", "id", getCodigo(), "nome", getNome());
+        return String.format("%s: %s | %s: %s %s : %s ", "id", getCodigo(), "nome", getNome(), "| valor", getValor());
     }
 
 }

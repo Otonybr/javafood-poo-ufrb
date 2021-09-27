@@ -18,6 +18,7 @@ public class Usuario {
     };
 
     // Getters and Setters
+
     public String getNome() {
         return nome;
     }

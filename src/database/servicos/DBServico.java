@@ -12,5 +12,6 @@ public class DBServico {
     }
 
     // Recebe um objeto do tipo Servico e adiciona à lista de Produtos
-    public void adicionarProduto(Servico produto){};
+    public void adicionarProduto(Servico produto) {
+    };
 }

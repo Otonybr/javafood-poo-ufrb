@@ -7,9 +7,9 @@ public class PlanoDeRefeicao extends Servico {
     private int marmitex;
 
     // construtor
-    public PlanoDeRefeicao(String codigo, String nome, int duracao, int marmitex, double valor) {
+    public PlanoDeRefeicao(String codigo, String nome, int duracao, int marmitex, double valor, String responsavel) {
 
-        super(codigo, nome, valor);
+        super(codigo, nome, valor, responsavel);
 
         if (valor <= 0.0)
             throw new IllegalArgumentException("Valor must be > 0.0");
@@ -38,11 +38,13 @@ public class PlanoDeRefeicao extends Servico {
         this.marmitex = marmitex;
     }
 
-    // formatação
     @Override
     public String toString() {
-        return String.format("%s / %s: %s meses/%s: %s marmitas / %s: R$%,.2f", super.toString(), "dura", getduracao(),
-                "quantidade", getMarmitex(), "valor", getValor());
+        return super.toString();
+    }
+
+    public String detalharPlano() {
+        return super.toString() + " | Duração: " + getduracao() + " Meses " + "| Mamitex: " + getMarmitex();
     }
 
 }
